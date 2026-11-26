@@ -82,7 +82,9 @@ For a fresh sample dataset, install into a separate database such as `myriad_dem
 
 ## Contributing
 
-Make changes on a branch and open a pull request against `main`. You can fork the repository for proposed changes. In the pull request, describe what changed and how you tested it.
+Teammates work on their own branches. Soulaymane uses `soulaymane`. Push your changes to your branch and open a pull request against `main`. Describe what changed and how you tested it. Contributors without write access can open a pull request from a fork.
+
+`main` requires a pull request and an approving review from another collaborator with write access. If you push new changes after the review, request approval again before merging.
 
 ## Credits
 
