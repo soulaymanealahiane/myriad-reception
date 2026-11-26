@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: myriad
+      POSTGRES_USER: myriad
+      POSTGRES_PASSWORD: myriad_local_demo
+    volumes:
+      - myriad_data:/var/lib/postgresql/data
+      - ./myriad.sql:/docker-entrypoint-initdb.d/10-myriad.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "myriad", "-d", "myriad"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+  web:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://myriad:myriad_local_demo@db:5432/myriad
+      HOST: 0.0.0.0
+    ports:
+      - "127.0.0.1:${MYRIAD_PORT:-3000}:3000"
+volumes:
+  myriad_data:

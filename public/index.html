@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17362f">
+  <title>MyRiad Reception</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>MyRiad</strong><small>Riad Safir Marrakech</small></span>
+      </a>
+      <nav aria-label="Reception">
+        <a href="#overview" data-nav="overview"><span aria-hidden="true">◈</span>Overview</a>
+        <a href="#availability" data-nav="availability"><span aria-hidden="true">▦</span>Availability</a>
+        <a href="#reservations" data-nav="reservations"><span aria-hidden="true">▤</span>Reservations</a>
+        <a href="#arrivals" data-nav="arrivals"><span aria-hidden="true">◷</span>Arrivals</a>
+        <a href="#inventory" data-nav="inventory"><span aria-hidden="true">▧</span>Rooms &amp; rates</a>
+      </nav>
+      <div class="sidebar-footer"><span class="reception-dot"></span> Reception desk</div>
+    </aside>
+    <div class="page">
+      <header class="topbar">
+        <span id="section-label">Overview</span>
+        <time id="business-date"></time>
+      </header>
+      <main id="workspace" tabindex="-1" aria-busy="true">
+        <p class="loading">Loading reception desk…</p>
+      </main>
+    </div>
+  </div>
+  <dialog id="editor" aria-labelledby="dialog-title"></dialog>
+  <div id="notice" class="notice" role="status" hidden></div>
+</body>
+</html>
